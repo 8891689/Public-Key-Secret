@@ -141,7 +141,7 @@ Assuming that 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 減法 結果(result): 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 ```
 If we obtain the true private key corresponding to the public key 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, how do we recover it?
-Assuming you obtain Private Key 1 using another program, you must use a computer to add back the subtracted value because it was subtracted from the main body. Therefore, you must add the encoding number 5 to return to the original value. Simply put, 6 - 5 = 1, so we need to add it back, 1 + 5 = 6, and then you can recover it. So let's use a calculator to compute it.
+Assuming you obtain Private Key 1 using another program, you must use a computer to add back the subtracted value because it was subtracted from the main body. Therefore, you must add the encoding number 5 to return to the original value. Simply put, 6 - 5 = 1, so we need to add it back, 1 + 5 = 6, and then you can recover it.Similarly, when the coding value is ( + ), it needs to subtract the coding value after ( - ). So let's use a calculator to compute it.
 ```
 ./c
 Large integer calculator大整数进制计算器（C + GMP）
