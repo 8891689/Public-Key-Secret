@@ -1,5 +1,5 @@
 /* pubkey_cloning.c
- * gcc pubkey_cloning.c random.c bitrange.c -o pc -march=native libsecp256k1.a -lgmp -Wall -Wextra -O3
+ * gcc pubkey_cloning.c random.c bitrange.c -o p -march=native libsecp256k1.a -lgmp -Wall -Wextra -O3
  *author：8891689 , https://github.com/8891689
  */
 
