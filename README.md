@@ -94,7 +94,7 @@ Examples:
 [+] bits=135 → min=2^(135-1)=4000000000000000000000000000000000, max=2^135-1=7fffffffffffffffffffffffffffffffff
 
 ```
-For example, in a jigsaw puzzle, -b 135 is used as an example to fill in the public key, -n 100 makes 100 cloned public keys, -R is a random mode, the -v command is to put a code behind each public key clone, and --o Public_key_cloning.txt is output to the document.
+For example, in a puzzle game- B 135 is used as an example of filling the public key- Generate 100 cloned public keys for n 100- R is a random pattern- The 'v' command places a specific numeric number after each public key clone, and -- o public_key_cloning.txt is output to the document.
 
 The output document content is as follows. It is best to test it in small quantities and then produce it in large quantities when you think it is suitable.
 ```
@@ -135,7 +135,7 @@ example
 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798 = - 5  ******（Assuming）例子
 03fff97bd5755eeea420453a14355235d382f6472f8568a18b2f057a1460297556 = original
 ```
-Assuming that 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798 is the cloned public key we made, after the following - 5 is the encoding, then 03fff97bd5755eeea420453a14355235d382f6472f8568a18b2f057a1460297556 is our subject public key.
+Assuming that 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798 is the cloned public key we generated, in the following example, -5 actually represents a number subtracted by 5, where 5 is the encoded number of the cloned public key, and 03fff97bd5755eeea420453a14355235d382f6472f8568a18b2f057a1460297556 is our subject's original public key.
 ```
 ./pc 03fff97bd5755eeea420453a14355235d382f6472f8568a18b2f057a1460297556 - 5
 減法 結果(result): 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
