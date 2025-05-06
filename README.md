@@ -94,7 +94,7 @@ Examples:
 [+] bits=135 → min=2^(135-1)=4000000000000000000000000000000000, max=2^135-1=7fffffffffffffffffffffffffffffffff
 
 ```
-For example, in a puzzle game- B 135 is used as an example of filling the public key- Generate 100 cloned public keys for n 100- R is a random pattern- The 'v' command places a specific numeric number after each public key clone, and -- o public_key_cloning.txt is output to the document.
+For example, in a jigsaw puzzle game -b 135 is used as an example of filling the public key Generate 100 cloned public keys for -n 100 -R is a random pattern -v command places a specific numeric number after each public key clone, and -o public_key_cloning.txt is output to the document.
 
 The output document content is as follows. It is best to test it in small quantities and then produce it in large quantities when you think it is suitable.
 ```
@@ -260,7 +260,7 @@ grep -E '^[0-9a-fA-F]{66} = +' 189b3bc478.txt | grep -o -E '[0-9a-fA-F]{66}' > b
 split -n 2 1 1_
 
 1_aa
-1_bb
+1_ab
 
 # Acknowledgements
 
