@@ -211,24 +211,24 @@ https://www.oklink.com/zh-hans/all-chain
 
 # Auxiliary advanced commands Debian/Ubuntu
 
-2. Public_key_cloning.txt Search in Documentation 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
+1. Public_key_cloning.txt Search in Documentation 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 
 grep -B 1 "0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798" Public_key_cloning.txt
 
-3. The Merge and Remove Duplicates command merges the two files 1.txt and 2.txt into one file 1.2.txt after removing duplicates.
+2. The Merge and Remove Duplicates command merges the two files 1.txt and 2.txt into one file 1.2.txt after removing duplicates.
 
 cat 1.txt 2.txt | sort -u > 1.2.txt 
 
-4. Remove duplicate commands to remove redundant data in the 1.txt document, such as addresses or public keys, and make it a unique 1.2.txt
+3. Remove duplicate commands to remove redundant data in the 1.txt document, such as addresses or public keys, and make it a unique 1.2.txt
 
 sort -u 1.txt > 1.2.txt
 
-5. Count the number of lines in the command 1.2.txt document.
+4. Count the number of lines in the command 1.2.txt document.
 
 wc -l 1.2.txt
 
 
-6. Various addresses and hash values, as well as public key extraction commands, such as extracting only the address of the required length from the document, as well as the hash value 160, the public key, the document name in front, and the output name behind.
+5. Various addresses and hash values, as well as public key extraction commands, such as extracting only the address of the required length from the document, as well as the hash value 160, the public key, the document name in front, and the output name behind.
 
 ```
 grep -o -E '1[a-zA-Z0-9]{25,34}' Bitcoin_addresses_LATEST.txt > bitcoin_addresses.txt            // For example, this command only extracts the address and length starting with 1.
@@ -255,7 +255,7 @@ grep -o -E '0[23][0-9a-fA-F]{64}' b9b6d08d1e16.txt > 9b6d08d1e16.txt
 grep -E '^[0-9a-fA-F]{66} # +' 189b3bc478.txt | grep -o -E '[0-9a-fA-F]{66}' > bc478.txt
 ```
 
-7. If the file is too large, you can split it into two files, splitting 1.txt into 1_aa and 1_bb.
+6. If the file is too large, you can split it into two files, splitting 1.txt into 1_aa and 1_bb.
 
 split -n 2 1 1_
 
@@ -266,11 +266,8 @@ split -n 2 1 1_
 
 Author: 8891689
 
-Assisted in creation: gemini ，ChatGPT 。
+Assisted in creation: gemini ，ChatGPT，DeepSeek 。
 
-Utilizes the libsecp256k1 library.
-
-Includes implementations for SHA256, RIPEMD160, Keccak256, Base58Check, Bech32, and CashAddr.
 
 
 # Sponsorship
