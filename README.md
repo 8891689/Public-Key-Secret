@@ -14,7 +14,7 @@ sudo apt-get install libsecp256k1-dev
 ```
 2. macOS
 
-# If Homebrew is not installed:
+If Homebrew is not installed:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
