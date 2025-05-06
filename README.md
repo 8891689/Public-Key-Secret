@@ -252,7 +252,7 @@ grep -o -E '[0-9a-fA-F]{66}' b9b6d08d1e16.txt > 9b6d08d1e16.txt          //This 
 
 grep -o -E '0[23][0-9a-fA-F]{64}' b9b6d08d1e16.txt > 9b6d08d1e16.txt
 
-grep -E '^[0-9a-fA-F]{66} # +' 189b3bc478.txt | grep -o -E '[0-9a-fA-F]{66}' > bc478.txt
+grep -E '^[0-9a-fA-F]{66} = +' 189b3bc478.txt | grep -o -E '[0-9a-fA-F]{66}' > bc478.txt
 ```
 
 6. If the file is too large, you can split it into two files, splitting 1.txt into 1_aa and 1_bb.
