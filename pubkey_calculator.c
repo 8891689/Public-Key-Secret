@@ -1,5 +1,5 @@
-// gcc -o p pubkey_calculator.c -march=native -O3 libsecp256k1.a -lgmp
-// 作者：8891689
+// gcc -o pc pubkey_calculator.c -march=native -O3 libsecp256k1.a -lgmp
+// author：8891689
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
