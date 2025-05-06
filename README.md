@@ -140,9 +140,8 @@ Assuming that 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 ./pc 03fff97bd5755eeea420453a14355235d382f6472f8568a18b2f057a1460297556 - 5
 減法 結果(result): 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 ```
-So we hit the public key 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, so why are we still far away from it?
-
-Assuming that you hit it and get the private key 1, then you have to use a computer to add the value he subtracted, because it is subtracted from the main body, so you have to add the code 5 to return to the original value, and then you can get it back, so let's use a calculator to calculate it.
+If we obtain the true private key corresponding to the public key 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, how do we recover it?
+Assuming you click it and obtain private key 1, you must use a computer to add back the subtracted value because it was subtracted from the main body. Therefore, you must add the encoding number 5 to return to the original value. Simply put, 6 - 5 = 1, so we need to add it back, 1 + 5 = 6, and then you can recover it. So let's use a calculator to compute it.
 ```
 ./c
 Large integer calculator大整数进制计算器（C + GMP）
