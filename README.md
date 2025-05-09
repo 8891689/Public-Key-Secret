@@ -262,6 +262,28 @@ split -n 2 1 1_
 1_aa
 1_ab
 
+7. Compressed and uncompressed public key converter, unified into one mode.
+```
+gcc pkconvert.c -O3 -march=native libsecp256k1.a -o pkconvert
+```
+```
+./pkconvert input_pubkeys.txt output_pubkeys_comp.txt -c
+
+./pkconvert input_pubkeys.txt output_pubkeys_comp.txt -u
+```
+or
+```
+./pkconvert 042595e202faf06907a18fe2666a6e4ea8d3281339fc01b7ccdcb5b75d2a80807c9f37918514c746febd6f0c19b3830269ab2eada16a04aa8b71976b375f4a00d2
+022595e202faf06907a18fe2666a6e4ea8d3281339fc01b7ccdcb5b75d2a80807c
+
+
+./pkconvert 022595e202faf06907a18fe2666a6e4ea8d3281339fc01b7ccdcb5b75d2a80807c -u
+042595e202faf06907a18fe2666a6e4ea8d3281339fc01b7ccdcb5b75d2a80807c9f37918514c746febd6f0c19b3830269ab2eada16a04aa8b71976b375f4a00d2
+```
+
+Input compressed and uncompressed public keys, output the default compressed public key, or add -u to convert it to an uncompressed public key. -c is the compressed public key command. It supports single public key conversion and also needs to add the command.
+
+
 # Acknowledgements
 
 Author: 8891689
