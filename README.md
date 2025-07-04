@@ -44,25 +44,6 @@ Can be combined and installed:
 pacman -S mingw-w64-x86_64-gmp mingw-w64-x86_64-secp256k1
 ```
 
-# Note: This is a standard convention for most command line tools, especially in Windows environments:
-```
-Program [options]... [arguments]...
-Use the following commands in the correct order:
-generated bash
-./p.exe -b 15 -n 30 02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16
-
-Or, if you want to output to a file at the same time:
-generated bash
-./p.exe -b 15 -n 30 -o 1.txt 02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16
-
-The order of options (-b takes precedence or -n It doesn't matter which one comes first, but they both must come before the public key.
-In the correct order, getopt's parsing process will be:
-See -b, process it.
-See -n, process it.
-See -o, process it.
-When it sees the public key 02145...1e16, it is not an option, and getopt stops working.
-At this point, zero_count has been successfully set to 30, and the program can be executed smoothly.
-```
 # Compile the code using gcc:
 
 libsecp256k1.a static library, and gmp are downloaded, just compile it directly.
@@ -303,7 +284,23 @@ or
 
 Input compressed and uncompressed public keys, output the default compressed public key, or add -u to convert it to an uncompressed public key. -c is the compressed public key command. It supports single public key conversion and also needs to add the command.
 
+# Note: This is a standard convention for most command line tools, especially in Windows environments:
+```
+Program [options]... [arguments]...
+Use the following commands in the correct order:
+./p.exe -b 15 -n 30 02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16
 
+Or, if you want to output to a file at the same time:
+./p.exe -b 15 -n 30 -o 1.txt 02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16
+
+The order of options (-b takes precedence or -n It doesn't matter which one comes first, but they both must come before the public key.
+In the correct order, getopt's parsing process will be:
+See -b, process it.
+See -n, process it.
+See -o, process it.
+When it sees the public key 02145...1e16, it is not an option, and getopt stops working.
+At this point, zero_count has been successfully set to 30, and the program can be executed smoothly.
+```
 # Acknowledgements
 
 Author: 8891689
