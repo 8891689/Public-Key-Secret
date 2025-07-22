@@ -2,6 +2,9 @@
 I have been researching public keys for a long time. I uploaded the tools I used before for everyone to use. I personally think they are helpful for solving puzzles. For example, the public key cloner can clone the public keys of 135 questions countless times, which improves the hit rate. It also adds a number at the back. Assuming you hit it, you can use the public key calculator to get the original private key! A calculator is also uploaded, which can convert decimal and hexadecimal freely and calculate, which is useful for making cloned public keys. For the other 5 programs, one is interior point homomorphic calculation. For example, other programs calculate another private key, which can directly return the subject public key, or the subject public key corresponding to the public key, because they have 2 function structures. Generally speaking, the interior homomorphism in the directory is used, and the one in the file package is another. There is also a software that will not be announced to the outside world for the time being, because it is a weakness of the public key. It is extremely easy to succeed in 135 puzzles. Of course, it also requires powerful computing support to achieve. Ok！ let me introduce how to use and compile and run them.
 
 Pubkey_reduce is actually a program for reducing the secret key. It is not free. You need to pay $50 to get the compressed password. Like other paid items, you only need to pay a one-time fee to enjoy all the paid programs. Please note that the paid items are not the sale of patents, but the right to use. Do not publish them to the public or trade them privately, otherwise it will violate the software regulations and there will be legal risks.
+
+Examples have shown that when the public key is known, the range of the private key can be directly deduced and narrowed, and other programs can be used to brute force the private key used by the public key with a narrowed range. Narrowing the range of the private key is reliable, which brings the scientific problem of discrete logarithms one step forward.
+
 ## Building
 
 The program depends on the "libsecp256k1" library and the multiple-precision arithmetic library -lgmp. I have packaged secp256k1 as a static library and can be linked directly. Generally, the system has a multi-precision arithmetic library. If it is not available, you need to install it:
@@ -60,12 +63,13 @@ make clean
 
 For example, single or multiple usage
 ```
-gcc key_homomorphism.c libsecp256k1.a -Wall -Wextra -O3 -o kh
+gcc key_homomorphism.c -lsecp256k1 -Wall -Wextra -O3 -o kh
 gcc calculator.c -lgmp -O3 -o c
-gcc pubkey_calculator.c -march=native libsecp256k1.a -lgmp -O3 -o pc
-gcc pubkey_cloning.c random.c bitrange.c -march=native libsecp256k1.a -lgmp -Wall -Wextra -O3 -o p
-gcc pubkey_homomorphism.c libsecp256k1.a -lgmp -Wall -Wextra -O3 -o ph
-gcc pubkey_reduce.c bitrange.c -march=native libsecp256k1.a -lgmp -Wall -Wextra -O3 -o pr
+gcc pubkey_calculator.c -march=native -lsecp256k1 -lgmp -O3 -o pc
+gcc pubkey_cloning.c random.c bitrange.c -march=native -lsecp256k1 -lgmp -Wall -Wextra -O3 -o p
+gcc pubkey_homomorphism.c -lsecp256k1 -lgmp -Wall -Wextra -O3 -o ph
+gcc pubkey_reduce.c bitrange.c -march=native -lsecp256k1 -lgmp -Wall -Wextra -O3 -o pr
+gcc -DSECP256K1_STATIC -static pubkey_division.c bloom.c bitrange.c random.c sha256.c ripemd160.c base58.c -o division -pthread -march=native -lgmp -lm -Wall -Wextra -O3 -lsecp256k1
 ```
 
 Parameter Description:
